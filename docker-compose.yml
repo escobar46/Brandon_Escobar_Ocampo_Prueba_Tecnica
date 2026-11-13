@@ -1,0 +1,11 @@
+services:
+  polizas-api:
+    build: .
+    image: polizas-api:latest
+    ports:
+      - "8080:8080"
+    environment:
+      # Spring convierte POLIZAS_API_KEY en polizas.api-key: se puede cambiar sin recompilar
+      POLIZAS_API_KEY: "123456"
+      POLIZAS_IPC: "0.0500"
+      CORE_TIMEOUT: "2s"
